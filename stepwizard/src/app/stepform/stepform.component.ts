@@ -1,8 +1,8 @@
-// stepform.component.ts
+
 
 import { Component, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
 import { StepComponent } from '../step/step.component';
-// import { StepComponent } from './step.component';
+
 
 @Component({
   selector: 'app-stepform',
@@ -12,10 +12,10 @@ import { StepComponent } from '../step/step.component';
 export class StepformComponent implements AfterContentInit {
   @ContentChildren(StepComponent) steps: QueryList<StepComponent> = new QueryList<StepComponent>();
   
-  currentStepIndex: number = 1;
+  currentStepIndex: number = 0;
 
   ngAfterContentInit() {
-    console.log(this.steps.length)
+
     this.steps.toArray()[this.currentStepIndex].active = true;
     
   }

@@ -1,6 +1,24 @@
 <app-stepform>
-  <app-step>Step 1 </app-step>
-  <app-step>Step 2</app-step>
-  <app-step>Step 3</app-step>
-  <app-step>Step 4</app-step>
+  <app-step [active]="true"
+    ><div class="form-element">
+      <label for="name">Name : </label>
+      <input type="text" />
+    </div>
+  </app-step>
+  <app-step
+    ><div>
+      <label for="name">Email : </label>
+      <input type="text" /></div
+  ></app-step>
+  <app-step
+    ><div>
+      <label for="name">Passoword : </label>
+      <input type="text" /></div
+  ></app-step>
+  <app-step>
+    <div>
+      <label for="name">Confirm Passoword : </label>
+      <input type="text" />
+    </div>
+  </app-step>
 </app-stepform>

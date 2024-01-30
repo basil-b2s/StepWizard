@@ -1,14 +1,16 @@
-<div>
-  <ng-content select="app-step"></ng-content>
-</div>
-<div>
-  <button (click)="prevStep()" [disabled]="currentStepIndex === 0">
-    Previous
-  </button>
-  <button
-    (click)="nextStep()"
-    [disabled]="currentStepIndex === steps.length - 1"
-  >
-    Next
-  </button>
+<div class="content-body">
+  <div class="selected-content">
+    <ng-content select="app-step"></ng-content>
+  </div>
+  <div class="buttons">
+    <button (click)="prevStep()" [disabled]="currentStepIndex === 0">
+      Previous
+    </button>
+    <button
+      (click)="nextStep()"
+      [disabled]="currentStepIndex === steps.length - 1"
+    >
+      Next
+    </button>
+  </div>
 </div>
