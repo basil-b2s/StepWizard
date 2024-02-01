@@ -1,16 +1,37 @@
+<div class="icon-container">
+  <div
+    class="icon"
+    *ngFor="let step of steps.toArray(); let i = index"
+    [class.active]="currentStepIndex === i"
+  >
+    <ng-container *ngIf="i === 0">
+      <i class="fas fa-user"></i>
+    </ng-container>
+    <ng-container *ngIf="i === 1">
+      <i class="fas fa-envelope"></i>
+    </ng-container>
+    <ng-container *ngIf="i === 2">
+      <i class="fas fa-lock"></i>
+    </ng-container>
+    <ng-container *ngIf="i === 3">
+      <i class="fas fa-check"></i>
+    </ng-container>
+  </div>
+</div>
 <div class="content-body">
   <div class="selected-content">
     <ng-content select="app-step"></ng-content>
   </div>
   <div class="buttons">
-    <button (click)="prevStep()" [disabled]="currentStepIndex === 0">
+    <button (click)="prevStep()" [hidden]="currentStepIndex === 0">
       Previous
     </button>
     <button
       (click)="nextStep()"
-      [disabled]="currentStepIndex === steps.length - 1"
+      [hidden]="currentStepIndex === steps.length - 1"
     >
       Next
     </button>
+    <button *ngIf="currentStepIndex === steps.length - 1">Submit</button>
   </div>
 </div>

@@ -11,7 +11,7 @@
 
 // }
 
-import { Component, Input } from '@angular/core';
+   import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-step',
@@ -20,4 +20,3 @@ import { Component, Input } from '@angular/core';
 export class StepComponent {
   @Input() active: boolean = false;
 }
-
