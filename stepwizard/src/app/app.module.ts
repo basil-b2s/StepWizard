@@ -17,7 +17,8 @@ import { StepComponent } from './step/step.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

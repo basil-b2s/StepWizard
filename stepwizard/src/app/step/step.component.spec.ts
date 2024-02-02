@@ -8,7 +8,7 @@ describe('StepComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StepComponent]
+      declarations: [StepComponent]
     })
     .compileComponents();
     
@@ -17,7 +17,11 @@ describe('StepComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the step component', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should bind the active property', ()=>{
+    expect(component.active).toBeFalsy()
+  })
 });

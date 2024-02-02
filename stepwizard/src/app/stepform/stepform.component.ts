@@ -13,14 +13,16 @@ export class StepformComponent implements AfterContentInit {
   @ContentChildren(StepComponent) steps: QueryList<StepComponent> = new QueryList<StepComponent>();
   
   currentStepIndex: number = 0;
-
+  
   ngAfterContentInit() {
-
-    this.steps.toArray()[this.currentStepIndex].active = true;
+    if(this.steps && this.steps.length>0){
+      this.steps.toArray()[this.currentStepIndex].active = true;
+    
+    }
     
   }
 
-  nextStep() {
+  public nextStep() {
     if (this.currentStepIndex < this.steps.length - 1) {
       this.steps.toArray()[this.currentStepIndex].active = false;
       this.currentStepIndex++;
@@ -29,7 +31,7 @@ export class StepformComponent implements AfterContentInit {
     }
   }
 
-  prevStep() {
+  public prevStep() {
     if (this.currentStepIndex > 0) {
       this.steps.toArray()[this.currentStepIndex].active = false;
       this.currentStepIndex--;
